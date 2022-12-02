@@ -1,7 +1,10 @@
 # ScrapCrab
 
-Automated webscraping combined with a dashboard.
-Master project.
+Automated webscraping, timeseries database & dashboard.
+
+Deployed in a docker-compose environment.
+
+1 Credit Master project.
 
 # Goal
 
