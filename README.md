@@ -41,7 +41,7 @@ Page content: https://pegel.bonn.de/php/rheinpegel.php (waterlevel)
                     Source: https://apscheduler.readthedocs.io/en/3.x/userguide.html
                 - Added logging. INFO/WARNING, FORMATER
                     Source: https://stackoverflow.com/questions/16757578/what-is-pythons-default-logging-formatter
-                - Added headless Chromedriver to python. Required for running inside a docker-container. 
+                - Added headless Chromedriver to python. Required for running Selenium inside docker-container. 
                     Window settings window size was important somehow. 
                     Source: https://www.geeksforgeeks.org/driving-headless-chrome-with-python/
                 - Added Chromedriver-version handling in Dockerfile.
