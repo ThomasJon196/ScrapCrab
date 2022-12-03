@@ -52,6 +52,7 @@ Page content: https://pegel.bonn.de/php/rheinpegel.php (waterlevel)
     
 # IDEAS
 
+- Deploy on Chromebox and Monitor Chromebox Resources
 - Alternatively use selenium standalone images https://github.com/SeleniumHQ/docker-selenium
 - Add env-variables & conditionals for logging levels
 - Check chromedriver compatibility
