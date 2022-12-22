@@ -1,4 +1,5 @@
 # Init influxDB with access token. Required for access to the database.
+# Already part of docker-compose
 
 docker run --rm -d -p 8086:8086 \
       -v $PWD/influx/database:/var/lib/influxdb2 \

@@ -49,9 +49,19 @@ Page content: https://pegel.bonn.de/php/rheinpegel.php (waterlevel)
                 - docker-compose added and scraper + influxdb works.
                 - 7 hours
 
-    
+    05.12.22    - Tried monitoring/ docker-compose file. Grafana/Prometheus/node-exporter.
+                    Prometheus Error: ts=2022-12-05T17:23:46.631Z caller=dedupe.go:112 component=remote level=warn remote_name=37e61e
+                     url=grafana msg="Failed to send batch, retrying" err="Post \"grafana\": unsupported protocol scheme \"\""
+
+
+    22.12.22    - Error: raise NewConnectionError(
+      | urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f7f1ef17ac0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+                Write api cannot find influxdb...somehow. Localhost was accessible.
+
 # IDEAS
 
+- Grafana credentials are in plaintext inside prometheus.yaml. How to import these env files into yaml file?
 - Deploy on Chromebox and Monitor Chromebox Resources
 - Alternatively use selenium standalone images https://github.com/SeleniumHQ/docker-selenium
 - Add env-variables & conditionals for logging levels

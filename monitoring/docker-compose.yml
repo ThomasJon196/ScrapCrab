@@ -1,0 +1,63 @@
+# Sources: 
+# - https://grafana.com/docs/grafana-cloud/quickstart/docker-compose-linux/
+# - https://grafana.com/docs/grafana/v9.3/setup-grafana/installation/docker/
+# - https://grafana.com/docs/grafana/v9.3/getting-started/build-first-dashboard/
+
+version: '3.8'
+
+networks:
+  monitoring:
+    driver: bridge
+    
+volumes:
+  prometheus_data: {}
+
+services:
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    expose:
+      - 9100
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    ports:
+      - 9090:9090
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana-oss:9.3.1-ubuntu
+    container_name: grafana
+    ports:
+        - 3000:3000
+    # volumes:
+    #   - ./grafana:/var/lib/grafana
+    # user: '1001'
+    environment:
+        GF_SECURITY_ADMIN_PASSWORD: grafana_totaly_secure_password
+    networks:
+      - monitoring

@@ -23,6 +23,8 @@ services:
     env_file:
       - .env
     environment:
-      - influxdb_url=$influxdb.container_name
+      - INFLUXDB_URL=influxdb
       - REFRESH_INTERVAL_MINUTES=30
     command: python scheduled_scraper.py
+    depends_on: 
+      - influxdb
