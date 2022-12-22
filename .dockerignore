@@ -1,6 +1,5 @@
 .python-version
 influx/
 venv/
-**/node_modules
 **/__pycache__
 **/.ipynb_checkpoints
