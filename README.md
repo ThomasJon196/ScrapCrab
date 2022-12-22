@@ -58,6 +58,9 @@ Page content: https://pegel.bonn.de/php/rheinpegel.php (waterlevel)
       | urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f7f1ef17ac0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
 
                 Write api cannot find influxdb...somehow. Localhost was accessible.
+                Library functinon changed. So i had to add type cast to int.
+
+                - Made grafana work for exported prometheus metrics. But grafana actually imports metrics from prometheus. Prometheus push still fails.
 
 # IDEAS
 
