@@ -8,7 +8,7 @@ version: '3.8'
 networks:
   monitoring:
     driver: bridge
-    
+
 volumes:
   prometheus_data: {}
 

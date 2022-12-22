@@ -12,7 +12,7 @@ scrape_configs:
     - targets: ["node-exporter:9100"]
 
 remote_write:
-  - url: grafana
+  - url: http://grafana:3000
     basic_auth:
-      username: "admin"
-      password: "grafana_totaly_secure_password"
+      username: admin
+      password: grafana_totaly_secure_password
