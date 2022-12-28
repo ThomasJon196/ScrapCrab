@@ -13,23 +13,23 @@ volumes:
   prometheus_data: {}
 
 services:
-  node-exporter:
-    image: prom/node-exporter:latest
-    container_name: node-exporter
-    restart: unless-stopped
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /:/rootfs:ro
-    command:
-      - '--path.procfs=/host/proc'
-      - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
-    expose:
-      - 9100
-    networks:
-      - monitoring
+  # node-exporter:
+  #   image: prom/node-exporter:latest
+  #   container_name: node-exporter
+  #   restart: unless-stopped
+  #   volumes:
+  #     - /proc:/host/proc:ro
+  #     - /sys:/host/sys:ro
+  #     - /:/rootfs:ro
+  #   command:
+  #     - '--path.procfs=/host/proc'
+  #     - '--path.rootfs=/rootfs'
+  #     - '--path.sysfs=/host/sys'
+  #     - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+  #   expose:
+  #     - 9100
+  #   networks:
+  #     - monitoring
 
   prometheus:
     image: prom/prometheus:latest
@@ -54,9 +54,9 @@ services:
     container_name: grafana
     ports:
         - 3000:3000
-    # volumes:
-    #   - ./grafana:/var/lib/grafana
-    # user: '1001'
+    volumes:
+      - ./grafana:/var/lib/grafana
+    user: "$UID:$GID"
     environment:
         GF_SECURITY_ADMIN_PASSWORD: grafana_totaly_secure_password
     networks:

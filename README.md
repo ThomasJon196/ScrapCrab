@@ -10,8 +10,8 @@ Deployed in a docker-compose environment.
 
 - ~~Build service Retrieve data from web (Scrapping, API, downloads) [Python, BeautifulSoup, Requests, Selenium]~~
 - ~~Store data in database ([InfluxDB] for time series~~, [Prometheus] for Monitoring)
-- Create Dashboard to display data [Grafana]
-- Deploy application via docker-compose. (Optionaly on continously running machine Chromebox)
+- ~~Create Dashboard to display data [Grafana]~~
+- ~~Deploy application via docker-compose.~~ (Optionaly on continously running machine Chromebox)
 
 # Deadline: 10.01.2023
 
@@ -62,6 +62,11 @@ Page content: https://pegel.bonn.de/php/rheinpegel.php (waterlevel)
 
                 - Made grafana work for exported prometheus metrics. But grafana actually imports metrics from prometheus. Prometheus push still fails.
 
+    28.12.2022  - Prometheus vs influxDB : Pull-Based / Push-Based System.
+                - Combined monitoring with scraping docker-compose.
+                - Integrated influxDB Dashboard into Grafana
+                - Solved grafana file permission problems.
+
 # IDEAS
 
 - Grafana credentials are in plaintext inside prometheus.yaml. How to import these env files into yaml file?
@@ -70,3 +75,4 @@ Page content: https://pegel.bonn.de/php/rheinpegel.php (waterlevel)
 - Add env-variables & conditionals for logging levels
 - Check chromedriver compatibility
 - Best practise to load .env variables into Docker Image
+- ngrok-reverseproxy mit cloudflare-api. (Schwierigkeiten mit der Implementierung in .js)

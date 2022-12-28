@@ -1,6 +1,7 @@
 .env
 .python-version
 influx/
+grafana/
 venv/
 **/node_modules
 **/__pycache__
