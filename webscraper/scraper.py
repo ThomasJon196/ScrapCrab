@@ -10,6 +10,7 @@ Notes:
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from chromedriver_py import binary_path
+from selenium.webdriver.chrome.options import Options
 
 from bs4 import BeautifulSoup
 
@@ -25,8 +26,7 @@ def scrap_data():
     # Selenium is used to retrieve raw HTML-data    
 
     service_object = Service(binary_path)
-    # Invoke new browser window & Set enable headless mode
-    from selenium.webdriver.chrome.options import Options
+    # Invoke new browser window & enable headless mode
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=1920x1080")
