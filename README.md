@@ -6,16 +6,15 @@ Deployed in a docker-compose environment.
 
 1 Credit Master project.
 
-# Goal
+## Goal
 
 - ~~Build service Retrieve data from web (Scrapping, API, downloads) [Python, BeautifulSoup, Requests, Selenium]~~
 - ~~Store data in database ([InfluxDB] for time series~~, [Prometheus] for Monitoring)
 - ~~Create Dashboard to display data [Grafana]~~
 - ~~Deploy application via docker-compose.~~ (Optionaly on continously running machine Chromebox)
 
-# Deadline: 10.01.2023
 
-# Data sources
+## Data sources
 
 
 Download files: https://www.pegelonline.wsv.de/webservices/files (Temp & waterlevel)
@@ -23,7 +22,7 @@ Download files: https://www.pegelonline.wsv.de/webservices/files (Temp & waterle
 Page content: https://pegel.bonn.de/php/rheinpegel.php (waterlevel)
 
 
-# CHANGELOG
+## CHANGELOG
 
     xx.11.22    - Started project
                 - Researched websites for Rhein waterlevel data
