@@ -6,8 +6,7 @@ Deployed in a docker-compose environment.
 
 1 Credit Master project.
 
-![Image](documentation/images
-/InfluxDB-Dashboard-waterlevel.png)
+![Image](documentation/images/InfluxDB-Dashboard-waterlevel.png)
 
 
 ## Goal
