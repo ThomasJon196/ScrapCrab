@@ -6,6 +6,10 @@ Deployed in a docker-compose environment.
 
 1 Credit Master project.
 
+![Image](documentation/images
+/InfluxDB-Dashboard-waterlevel.png)
+
+
 ## Goal
 
 - ~~Build service Retrieve data from web (Scrapping, API, downloads) [Python, BeautifulSoup, Requests, Selenium]~~
